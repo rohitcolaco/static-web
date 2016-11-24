@@ -1,1 +1,1 @@
-Static UI files that interact with a set of mapped backend services
+Standalone static UI files in a project that interact with a set of mapped / decoupled backend services
