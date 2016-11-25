@@ -2,10 +2,10 @@
 *Note that this project interacts with a set of mapped / decoupled backend services (e.g. grizzly-web-service)*
 
 File list:
-* bower.json = names of all external JS / CSS libs to be pulled
-* .bowerrc = relative path where externals are pulled
-* gulpfile.js = gulp tasks to concatenate and uglify JS / CSS
-* package.json = gulp modules to be installed
+* bower.json = contains the names / versions of all external JS / CSS libs to be pulled
+* .bowerrc = defines the relative path (to the project home) where externals dependencies are pulled in to
+* gulpfile.js = defines gulp tasks to concatenate and uglify JS / CSS
+* package.json = contains gulp modules to be installed
 
 One time setup: (prereq = install [node](https://nodejs.org), [bower](https://bower.io), [gulp](http://gulpjs.com/)); then...
 
