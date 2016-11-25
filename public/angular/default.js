@@ -7,7 +7,7 @@ __$aoc
 
         function($scope, $http)
         {
-            $scope.name = "Angular";
+            $scope.name = null;
 
             $http
                 .get("/gws/test/json")
@@ -16,7 +16,7 @@ __$aoc
                         $scope.name = o.data.errorCode;
                     },
                     function(e){
-                        $scope.name = "ERROR: " + e.data;
+                        //$scope.name = "ERROR: " + e.data;
                     }
                 );
         }

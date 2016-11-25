@@ -2,23 +2,19 @@
 <html>
     <head lang="en-us">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="Author" content="Rohit Colaco">
         <title>Bolierplate: Web Application</title>
 
-        <!-- EXTERNAL STYLES -->
-        <link rel="stylesheet" href="../dependencies/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../dependencies/bootstrap/dist/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="../dependencies/font-awesome/css/font-awesome.min.css">
+        <!-- GULP'd CONCATENATED + UGLIFIED STYLES -->
+        <link rel="stylesheet" href="default.min.css">
 
-        <!-- EXTERNAL SCRIPTS -->
-        <script src="../dependencies/jquery/dist/jquery.min.js"></script>
-        <script src="../dependencies/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../dependencies/angular/angular.min.js"></script>
-        <script src="../dependencies/angular-route/angular-route.min.js"></script>
-        <script src="default.js"></script>
+        <!-- GULP'd CONCATENATED + UGLIFIED SCRIPTS -->
+        <script src="default.min.js"></script>
     </head>
 
     <body data-ng-app="ngAppTest" data-ng-controller="BodyController">
-        <h1>Hello {{name}}!</h1>
+        <h1>Hello
+            <span data-ng-show="!name" class="unresolved">&lt;not-yet-resolved&gt;</span>
+            <span data-ng-show="name" class="resolved">{{name}}</span>
+        </h1>
     </body>
 </html>

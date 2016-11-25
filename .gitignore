@@ -2,6 +2,8 @@
 
 src/main/webapp/dependencies
 *.iml
+default.min.css
+default.min.js
 
 ### Node ###
 # Logs
