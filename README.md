@@ -11,3 +11,9 @@ bower install xyz --save
 
 To reference the new JS / CSS lib, add specifics to...
 gulpfile.js
+
+To update default.min.js and default.min.css, run 'gulp'
+
+To download all JS / CSS dependencies locally, run 'bower install'
+
+To bring in all gulp dependencies, run 'npm install'
