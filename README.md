@@ -1,19 +1,24 @@
-Standalone static UI files in a project that interact with a set of mapped / decoupled backend services
+## H3 Standalone static UI files in a project that interact with a set of mapped / decoupled backend services
 
-bower.json = names of all external JS / CSS libs to be pulled
-.bowerrc = relative path where externals are pulled
+File list:
+* bower.json = names of all external JS / CSS libs to be pulled
+* .bowerrc = relative path where externals are pulled
+* gulpfile.js = gulp tasks to concatenate and uglify JS / CSS
+* package.json = gulp modules to be installed
 
-gulpfile.js = gulp tasks to concatenate and uglify JS / CSS
-package.json = gulp modules to be installed
+One time setup: (prereq = install [node](https://nodejs.org), [bower](https://bower.io), [gulp](http://gulpjs.com/)); then...
+1. To bring in all bower dependencies, run:
+`bower install`
+2. To bring in all gulp dependencies, run:
+`npm install`
+3. To build or update default.min.js and default.min.css, run:
+`gulp`
 
-To add a new JS / CSS lib, install as...
-bower install xyz --save
+Incremental updates:
+1. To add a new JS / CSS lib, install as...
+`bower install xyz --save`
+2. To reference the new JS / CSS lib, add specifics to...
+`gulpfile.js`
 
-To reference the new JS / CSS lib, add specifics to...
-gulpfile.js
-
-To update default.min.js and default.min.css, run 'gulp'
-
-To download all JS / CSS dependencies locally, run 'bower install'
-
-To bring in all gulp dependencies, run 'npm install'
+Test the app at:
+http://<host>[:port]/public/angular/
