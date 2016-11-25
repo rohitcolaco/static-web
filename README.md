@@ -27,5 +27,7 @@ Incremental updates:
 `gulpfile.js`
 
 Test the app locally at:
-http://localhost/public/angular/
-(assuming your web server runs on port 80 and has its document root pointing to the static-web/ project's base folder)
+
+<http://localhost/public/angular/>
+
+... assuming your web server runs on port 80 and has its document root pointing to the static-web/ project's base folder.
