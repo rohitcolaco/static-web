@@ -11,10 +11,9 @@
         <script src="default.min.js"></script>
     </head>
 
-    <body data-ng-app="ngAppTest" data-ng-controller="BodyController">
-        <h1>Hello
-            <span data-ng-show="!name" class="unresolved">&lt;not-yet-resolved&gt;</span>
-            <span data-ng-show="name" class="resolved">{{name}}</span>
-        </h1>
+    <body data-ng-app="ngAppTest" data-ng-controller="AppController">
+        <button data-ng-show="isLoggedIn()" data-ng-click="logout()" style="margin-bottom: 15px">Logout</button>
+        <div data-ng-view>
+        </div>
     </body>
 </html>

@@ -11,9 +11,13 @@ gulp.task('js-fef', function(){
             "./public/dependencies/bootstrap/dist/js/bootstrap.min.js",
             "./public/dependencies/angular/angular.min.js",
             "./public/dependencies/angular-route/angular-route.min.js",
-            "./public/angular/default.js"
+            "./public/dependencies/lscache/lscache.min.js",
+            "./public/angular/module.js",
+            "./public/angular/global/*.js",
+            "./public/angular/feature/login/*.js",
+            "./public/angular/feature/f1/*.js"
         ])
-        .pipe(gp_uglify())
+        //.pipe(gp_uglify())
         .pipe(gp_concat('default.min.js'))
         .pipe(gulp.dest('./public/angular'));
 });
@@ -23,9 +27,9 @@ gulp.task('css-fef', function() {
         "./public/dependencies/bootstrap/dist/css/bootstrap.min.css",
         "./public/dependencies/bootstrap/dist/css/bootstrap-theme.min.css",
         "./public/dependencies/font-awesome/css/font-awesome.min.css",
-        "./public/angular/default.css"
+        "./public/angular/global/*.css"
     ])
-    .pipe(gp_clean_css({compatibility: 'ie8'}))
+    //.pipe(gp_clean_css({compatibility: 'ie8'}))
     .pipe(gp_concat('default.min.css'))
     .pipe(gulp.dest('./public/angular'));
 });
