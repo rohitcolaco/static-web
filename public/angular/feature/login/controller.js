@@ -8,6 +8,7 @@ __$rcc
                 $scope.name = null;
                 $scope.username = "";
                 $scope.password = "";
+                $scope.errorMessage = null;
 
                 $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
@@ -19,6 +20,7 @@ __$rcc
                         .get("/gws/test/authenticate?username="+$scope.username+"&password=" + $scope.password)
                         .then(
                             function(o){
+                                $scope.errorMessage = null;
                                 var sToken = o.data.token;
                                 StaticFuncs.saveToken(sToken);
                                 $http.defaults.headers.common.Authorization = "Bearer " + sToken;
@@ -26,7 +28,8 @@ __$rcc
                                 $location.url("/feature/f1");
                             },
                             function(e){
-                                alert("An error occurred: " + e.data);
+                                $scope.errorMessage = e.status + " " + e.statusText;
+                                //$location.url("/feature/login");
                             }
                         );
                 };
