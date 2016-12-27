@@ -27,7 +27,8 @@ gulp.task('css-fef', function() {
         "./public/dependencies/bootstrap/dist/css/bootstrap.min.css",
         "./public/dependencies/bootstrap/dist/css/bootstrap-theme.min.css",
         "./public/dependencies/font-awesome/css/font-awesome.min.css",
-        "./public/angular/global/*.css"
+        "./public/angular/global/*.css",
+        "./public/angular/feature/f1/*.css"
     ])
     //.pipe(gp_clean_css({compatibility: 'ie8'}))
     .pipe(gp_concat('default.min.css'))

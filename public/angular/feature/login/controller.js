@@ -14,10 +14,12 @@ __$rcc
 
                 $scope.login = function()
                 {
-                    /*$http
-                        .post("/gws/test/authenticate", {username: $scope.username, password: $scope.password})*/
                     $http
-                        .get("/gws/test/authenticate?username="+$scope.username+"&password=" + $scope.password)
+                        .post(
+                            "/gws/test/authenticate",
+                            $.param({username: $scope.username, password: $scope.password}),
+                            {headers: {'Content-Type': 'application/x-www-form-urlencoded'}}
+                        )
                         .then(
                             function(o){
                                 $scope.errorMessage = null;
