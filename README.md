@@ -31,3 +31,12 @@ Test the app locally at:
 <http://localhost/public/angular/>
 
 ... assuming your web server runs on port 80 and has its document root pointing to the static-web/ project's base folder.
+
+Login successfully as admin / password.
+
+Features:
+* AngularJS 1.x impl
+- JS / CSS concatenation & compression
+- Routing
+- JWT auth header lscache for stickiness
+* ReactJS impl [coming soon]
