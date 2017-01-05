@@ -11,6 +11,8 @@ gulp.task('js-fef', function(){
             "./public/dependencies/bootstrap/dist/js/bootstrap.min.js",
             "./public/dependencies/angular/angular.min.js",
             "./public/dependencies/angular-route/angular-route.min.js",
+            "./public/dependencies/ng-file-upload-shim/ng-file-upload-shim.min.js",
+            "./public/dependencies/ng-file-upload/ng-file-upload.min.js",
             "./public/dependencies/lscache/lscache.min.js",
             "./public/angular/module.js",
             "./public/angular/global/*.js",

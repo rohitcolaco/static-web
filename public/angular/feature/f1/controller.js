@@ -1,7 +1,7 @@
 __$rcc.controller(
 	/* _NAME_         */ "F1Controller",
-	/* _DEPENDENCIES_ */ [ "$scope", "$http", "$timeout", "$location",
-	function($scope, $http, $timeout, $location)
+	/* _DEPENDENCIES_ */ [ "$scope", "$http", "$timeout", "$location", "Upload",
+	function($scope, $http, $timeout, $location, Upload)
 	{
 		$scope.name = "UNDEFINED";
 		$scope.sseResponse = "No SSE messages as yet";
@@ -83,6 +83,26 @@ __$rcc.controller(
 						alert("Failed to send an email.\n" + e.status + " \\ " + e.statusText);
 					}
 				);
+		};
+
+		/**
+		 * Uploads a file to the server with progress tracking
+		 * @param file
+		 */
+		$scope.upload = function(file)
+		{
+			Upload.upload({
+				url: "/gws/fileupload",
+				data: {file: file, 'username': $scope.username}
+			}).then(function(resp){
+				$scope.uploadStatus = 'Success ' + resp.config.data.file.name + ' uploaded';
+				$scope.responseData = resp.data;
+			}, function(resp){
+				$scope.uploadStatus = 'Error status: ' + resp.status;
+			}, function(evt){
+				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+				$scope.uploadStatus = 'Progress: ' + progressPercentage + '% ' + evt.config.data.file.name;
+			});
 		};
 
 		init();

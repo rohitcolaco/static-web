@@ -1,2 +1,5 @@
-var __$rcc = angular.module("ngAppTest", ["ngRoute"]);
+var __$rcc = angular.module("ngAppTest", [
+    "ngRoute",
+    "ngFileUpload"
+]);
 

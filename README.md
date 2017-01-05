@@ -21,7 +21,8 @@ One time setup: (prereq = install [node](https://nodejs.org), [bower](https://bo
 Incremental updates:
 
 1. To add a new JS / CSS lib, install as...
-`bower install xyz --save`
+`bower install xyz --save`. 
+Be sure to run this from your project based directory because `.bowerrc` contains a relative path.
 
 2. To reference the new JS / CSS lib, add specifics to...
 `gulpfile.js`
@@ -39,4 +40,5 @@ Features:
 - JS / CSS concatenation & compression
 - Routing
 - JWT auth header lscache for stickiness
+- File uploader w/ progress
 * ReactJS impl [coming soon]
