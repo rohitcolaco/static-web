@@ -5,8 +5,14 @@
     </h1>
     <p>
         <button class="btn btn-default" data-ng-click="dispatchJob()">Dispatch my asynchronous job</button>
-        <button class="btn btn-default" data-ng-disabled="disableSse" data-ng-click="initiateSse()">Initiate SSE</button>
         <button class="btn btn-default" data-ng-click="sendEmail()">Send Email</button>
+    </p>
+    <p>
+        <button class="btn btn-default" data-ng-click="invokeModal()">Invoke Modal</button>
+        <input type="text" data-ng-model="yourName"/>
+    </p>
+    <p>
+        <button class="btn btn-default" data-ng-disabled="disableSse" data-ng-click="initiateSse()">Initiate SSE</button>
     </p>
     <div class="sse-panel">
         {{sseResponse}}

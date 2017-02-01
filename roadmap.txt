@@ -1,0 +1,35 @@
+1 = test automation with protractor
+2 = messages with smart message
+3 = alerts and confirmations with bootstrap dialogs?
+4 = navigation / routing
+5 = bookmarking
+
+$.SmartMessageBox({
+    title: "<i class='fa fa-exclamation-triangle txt-color-orangeDark'></i> Attention!",
+    content: "Changing the list or segment clears any column and filter selections in steps 4 and 5 respectively.<br>Are you sure you want to do this?",
+    buttons: "[No][Yes]"
+}, function (sButtonText) {
+    if (sButtonText === "Yes") {
+        if (oE.projection)
+        {
+            oE.projection.splice(0, oE.projection.length);
+        }
+        oE.filter = {combine: "AND", expressions: []};
+        fnUpdateStuff();
+    }
+    else if (sButtonText === "No") {
+        $scope.listMeta.id = oLastListMeta.id;
+        $scope.listMeta.name = oLastListMeta.name;
+        $scope.listMeta.size = oLastListMeta.size;
+        __$common.refresh($scope);
+    }
+});
+
+
+$.smallBox({
+    title: "Clear Request Submitted",
+    content: "In demo mode, export run time clear requests aren't supported. Under normal circumstances, this request would clear the last run time for this export.",
+    color: "#c79121",
+    iconSmall: "fa fa-check bounce animated",
+    timeout: 4000
+});

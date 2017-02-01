@@ -1,7 +1,16 @@
-.sse-panel { border: 1px solid gray; width: 500px; font-family: Consolas, 'Liberation Mono', Courier, monospace; height: 100px; overflow-y: auto; background-color: #fff0ff; padding: 2px 3px; margin-bottom: 5px }
+.sse-panel {
+  border: 1px solid gray;
+  width: 500px;
+  font-family: Consolas, 'Liberation Mono', Courier, monospace;
+  height: 100px;
+  overflow-y: auto;
+  background-color: #fff0ff;
+  padding: 2px 3px;
+  margin-bottom: 5px;
+}
 .thumbnail {
-    width: 128px;
-    float: none;
-    position: relative;
-    top: 7px;
+  width: 128px;
+  float: none;
+  position: relative;
+  top: 7px;
 }

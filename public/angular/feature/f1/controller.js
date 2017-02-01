@@ -1,11 +1,12 @@
 __$rcc.controller(
 	/* _NAME_         */ "F1Controller",
-	/* _DEPENDENCIES_ */ [ "$scope", "$http", "$timeout", "$location", "Upload",
-	function($scope, $http, $timeout, $location, Upload)
+	/* _DEPENDENCIES_ */ [ "$scope", "$http", "$timeout", "$location", "Upload", "ModalService",
+	function($scope, $http, $timeout, $location, Upload, ModalService)
 	{
 		$scope.name = "UNDEFINED";
 		$scope.sseResponse = "No SSE messages as yet";
 		$scope.disableSse = false;
+		$scope.yourName = "Foo";
 
 		/**
 		 * A simple test endpoint
@@ -62,8 +63,8 @@ __$rcc.controller(
 				.post(
 					"/gws/test/email",
 					{
-						from: "source@domain.com",
-						to: "target@someone.com",
+						from: "a@source.com",
+						to: "b@target.com",
 						subject: "This is a test subject",
 						body: "This is the body of your message."
 					},
@@ -103,6 +104,37 @@ __$rcc.controller(
 				var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
 				$scope.uploadStatus = 'Progress: ' + progressPercentage + '% ' + evt.config.data.file.name;
 			});
+		};
+
+        /**
+		 * Invokes a sample popup modal
+         */
+		$scope.invokeModal = function()
+		{
+            /*$.smallBox({
+                title: "Clear Request Submitted",
+                content: "In demo mode, export run time clear requests aren't supported. Under normal circumstances, this request would clear the last run time for this export.",
+                color: "#c79121",
+                iconSmall: "fa fa-check bounce animated",
+                timeout: 4000
+            });*/
+            ModalService.showModal({
+                templateUrl: "feature/f1/popup/view.html",
+                controller: "F1DlgController",
+				inputs: {
+                	nameOfPerson: $scope.yourName
+				}
+            }).then(function(modal){
+                modal.element.modal();
+                modal.close.then(function(result){
+                	if (result) // null IF POPUP WAS CANCELLED
+					{
+                        $scope.yourName = result;
+					}
+                });
+            }).catch(function(error) {
+                console.log(error);
+            });
 		};
 
 		init();

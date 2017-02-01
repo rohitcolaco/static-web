@@ -4,6 +4,7 @@ src/main/webapp/dependencies
 *.iml
 default.min.css
 default.min.js
+public/angular/**/*.css
 
 ### Node ###
 # Logs
@@ -33,7 +34,6 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-
 
 ### Eclipse ###
 *.pydevproject

@@ -17,6 +17,13 @@ __$rcc
                     },
                     controller: "F1Controller"
                 })
+                .when("/feature/f1/popup", {
+                    templateUrl: function($routeParams)
+                    {
+                        return "feature/f1/popup/view.html";
+                    },
+                    controller: "F1Controller"
+                })
                 .otherwise({
                     redirectTo: function()
                     {
